@@ -7,6 +7,9 @@
   "unpkg": "dist/identity-library.umd.js",
   "repository": "git@github.com:voxmedia/identity-library.git",
   "license": "MIT",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "microbundle",
     "dev": "microbundle watch",
