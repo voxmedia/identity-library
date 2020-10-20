@@ -1,0 +1,37 @@
+{
+  "name": "@voxmedia/identity-library",
+  "version": "1.0.0",
+  "source": "src/identity-library.js",
+  "main": "dist/identity-library.js",
+  "module": "dist/identity-library.module.js",
+  "unpkg": "dist/identity-library.umd.js",
+  "repository": "git@github.com:voxmedia/identity-library.git",
+  "license": "MIT",
+  "scripts": {
+    "build": "microbundle",
+    "dev": "microbundle watch",
+    "lint": "eslint src/**",
+    "pretty": "prettier --write src/**"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.11.0",
+    "eslint-config-prettier": "^6.13.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.4.2",
+    "microbundle": "^0.12.4",
+    "prettier": "2.1.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{html,js,json,md,mdx,yml}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
