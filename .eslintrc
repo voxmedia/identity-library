@@ -5,7 +5,8 @@
   "parser": "babel-eslint",
   "env": {
     "es2017": true,
-    "node": true
+    "node": true,
+    "browser": true
   },
   "rules": {
     "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }]
