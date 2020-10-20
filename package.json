@@ -1,6 +1,6 @@
 {
   "name": "@voxmedia/identity-library",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "source": "src/identity-library.js",
   "main": "dist/identity-library.js",
   "module": "dist/identity-library.module.js",
@@ -14,7 +14,8 @@
     "build": "microbundle",
     "dev": "microbundle watch",
     "lint": "eslint src/**",
-    "pretty": "prettier --write src/**"
+    "pretty": "prettier --write src/**",
+    "semantic-release": "semantic-release"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
@@ -24,7 +25,8 @@
     "husky": "^4.3.0",
     "lint-staged": "^10.4.2",
     "microbundle": "^0.12.4",
-    "prettier": "2.1.2"
+    "prettier": "2.1.2",
+    "semantic-release": "^17.2.1"
   },
   "husky": {
     "hooks": {
@@ -35,6 +37,20 @@
     "*.{html,js,json,md,mdx,yml}": [
       "prettier --write",
       "git add"
+    ]
+  },
+  "release": {
+    "branches": [
+      "+([0-9])?(.{+([0-9]),x}).x",
+      "main",
+      {
+        "name": "beta",
+        "prerelease": true
+      },
+      {
+        "name": "alpha",
+        "prerelease": true
+      }
     ]
   }
 }
