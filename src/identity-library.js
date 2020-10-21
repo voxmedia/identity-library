@@ -8,7 +8,7 @@
  */
 export default async function identityFor(nameOrUsage, privateId) {
   if (
-    typeof window !== undefined &&
+    typeof window !== 'undefined' &&
     (window.Promise === undefined ||
       window.crypto === undefined ||
       window.crypto.subtle === undefined ||
