@@ -9,6 +9,7 @@ jobs:
         with:
           node-version: '12'
       - run: yarn --pure-lockfile
+      - run: yarn build
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
