@@ -59,7 +59,7 @@ async function generateSaltedHash(nameOrUsage, privateId) {
   // Node.js:
   const crypto = require('crypto');
   return crypto
-    .createHash('sha-256')
+    .createHash('sha256')
     .update(privateId + nameOrUsage)
     .digest('hex');
 }
