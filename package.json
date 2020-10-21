@@ -7,7 +7,7 @@
   "unpkg": "dist/identity-library.umd.js",
   "amdName": "identityFor",
   "repository": "git@github.com:voxmedia/identity-library.git",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "files": [
     "dist"
   ],
