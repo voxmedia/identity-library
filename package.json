@@ -5,6 +5,7 @@
   "main": "dist/identity-library.js",
   "module": "dist/identity-library.module.js",
   "unpkg": "dist/identity-library.umd.js",
+  "amdName": "identityFor",
   "repository": "git@github.com:voxmedia/identity-library.git",
   "license": "MIT",
   "files": [
