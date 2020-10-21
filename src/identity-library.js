@@ -6,7 +6,7 @@
  * @param {string} nameOrUsage Name or usage of identity (e.g. partner label).
  * @param {string} privateId   The private ID of the user.
  */
-export async function identityFor(nameOrUsage, privateId) {
+export default async function identityFor(nameOrUsage, privateId) {
   if (
     typeof window !== undefined &&
     (window.Promise === undefined ||
@@ -31,7 +31,7 @@ export async function identityFor(nameOrUsage, privateId) {
  * @param {string} nameOrUsage Name or usage of identity (e.g. partner label).
  * @param {string} privateId   The private ID of the user.
  */
-export function unsafeIdentityFor(nameOrUsage, privateId) {
+function unsafeIdentityFor(nameOrUsage, privateId) {
   var hash = '';
   var alphabet = '0123456789abcdef';
   var uniqueIdentity = privateId + nameOrUsage;
