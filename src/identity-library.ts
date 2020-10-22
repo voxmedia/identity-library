@@ -6,7 +6,7 @@
  * @param {string} nameOrUsage Name or usage of identity (e.g. partner label).
  * @param {string} privateId   The private ID of the user.
  */
-export default async function identityFor(nameOrUsage, privateId) {
+export default async function identityFor(nameOrUsage: string, privateId: string): Promise<string> {
   if (
     typeof window !== 'undefined' &&
     (window.Promise === undefined ||
@@ -31,7 +31,7 @@ export default async function identityFor(nameOrUsage, privateId) {
  * @param {string} nameOrUsage Name or usage of identity (e.g. partner label).
  * @param {string} privateId   The private ID of the user.
  */
-function unsafeIdentityFor(nameOrUsage, privateId) {
+function unsafeIdentityFor(nameOrUsage: string, privateId: string): string {
   var hash = '';
   var alphabet = '0123456789abcdef';
   var uniqueIdentity = privateId + nameOrUsage;
@@ -41,10 +41,11 @@ function unsafeIdentityFor(nameOrUsage, privateId) {
   for (var i = 0; i < uniqueIdentity.length; i++) {
     hash = alphabet[uniqueIdentity.charCodeAt(i) % alphabet.length] + hash;
   }
+
   return hash;
 }
 
-async function generateSaltedHash(nameOrUsage, privateId) {
+async function generateSaltedHash(nameOrUsage: string, privateId: string): Promise<string> {
   // Browser:
   if (typeof window !== 'undefined') {
     // Generate a byte stream with UTF-8 encoding.
@@ -65,16 +66,16 @@ async function generateSaltedHash(nameOrUsage, privateId) {
 }
 
 // Convert list of array map integers into a hex string
-function convertArrayMapToHexString(digestArrayBuffer) {
+function convertArrayMapToHexString(digestArrayBuffer: ArrayBuffer) {
   return [].slice
     .call(new Uint8Array(digestArrayBuffer))
-    .map(function (b) {
+    .map(function (b: number) {
       return b.toString(16).padStart(2, '0');
     })
     .join('');
 }
 
-function stringToArrayBuffer(string) {
+function stringToArrayBuffer(string: string): ArrayBuffer {
   if (typeof TextEncoder === 'function') {
     return new TextEncoder().encode(string);
   }

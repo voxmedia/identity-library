@@ -1,7 +1,7 @@
 {
   "name": "@voxmedia/identity-library",
   "version": "0.0.0-development",
-  "source": "src/identity-library.js",
+  "source": "src/identity-library.ts",
   "main": "dist/identity-library.js",
   "module": "dist/identity-library.module.js",
   "unpkg": "dist/identity-library.umd.js",
